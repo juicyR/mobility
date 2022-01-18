@@ -1,0 +1,203 @@
+a {
+    text-decoration: none;
+    color: white;
+    transition: .2s ease-in;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+/* Section 1 */
+
+.links {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: open sans;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.links > a:nth-child(1),
+.links > a:nth-child(2) {
+    margin-right: 25px;
+}
+
+.links > a:hover {
+    color: rgb(218, 218, 218);
+}
+
+.moto-stuff {
+    text-align: center;
+    font-family: open sans;
+    color: white;
+    /*margin-top: 190px;*/
+}
+
+.moto-stuff > h1 {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 70px;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.moto-stuff > p {
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+.disc-btn {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: open sans;
+}
+
+.disc-btn > a {
+    display: flex;
+    font-size: 15px;
+    background: #e55f04;
+    align-items: center;
+    padding: 6.5px;
+    width: 220px;
+    height: 50px;
+    border-radius: 49px;
+    justify-content: space-between;
+    transition: .3 ease-in;
+}
+
+.disc-btn > a:hover {
+    background: #b14903;
+}
+
+.disc-btn > a > span {
+    margin-left: 20px;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    background: black;
+    padding: 14px;
+    width: 24.5px;
+    height: 24px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Section 2 */
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    color: #666666;
+}
+
+.text > h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333333;
+}
+
+.text > p {
+    margin-top: 20px;
+    line-height: 25px;
+}
+
+.stats {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.stats > div > h1 {
+    font-size: 6rem;
+}
+
+.stats > div > p {
+    font-weight: 600;
+    width: 75%;
+    letter-spacing: 1px;
+}
+
+/* Section 3 */
+
+.messages > p {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.messages > p:nth-child(1) {
+    font-style: italic;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.messages > p:nth-child(2) {
+    width: 100%;
+    margin-top: 20px;
+    justify-self: left;
+    font-size: 15px;
+}
+
+/* Section 4 */
+
+.section4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.section4 > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333333;
+}
+
+.section4 > p {
+    text-align: center;
+    color: #666666;
+}
+
+.pg-1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Section 5 */
+.headers {
+    color: #878787;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.connect1,
+.connect2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.con > p {
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.con > h1 {
+    text-transform: uppercase;
+}
+
+.con > h3 {
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.con > h3 > a {
+    color: #ff8600;
+}
+
+/* Section 6 */
+.section6 {
+    font-family: 'Roboto', sans-serif;
+}
