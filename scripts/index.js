@@ -2,6 +2,16 @@ let arrowLeft = document.querySelector('.arrow-left');
 let arrowRight = document.querySelector('.arrow-right');
 let container = document.querySelector('.container');
 let siOne = document.querySelector('.si1'), siTwo = document.querySelector('.si2'), siThree = document.querySelector('.si3'), siFour = document.querySelector('.si4'), siFive = document.querySelector('.si5');
+let headerTop = document.querySelector('.header');
+
+window.onscroll = function() {
+    var intElemScrollTop = window.scrollY;
+    if (intElemScrollTop > 10) {
+        headerTop.style.backgroundColor = "#000066";
+    } else {
+        headerTop.style.backgroundColor = "transparent";
+    }
+};
 
 let current = 0;
 let images = [];
@@ -104,4 +114,3 @@ hda1.addEventListener("click", function(){
         h1Appear();
     }
 });
-
