@@ -3,10 +3,10 @@ body {
 }
 
 .container {
-    background-image: url(../Mobility/Website/Mobility-Home-Page-V1-assets/dark-gradient-image.png), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg);
+    background: url(../Mobility/Website/Mobility-Home-Page-V1-assets/dark-gradient-image.png), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: top, 50% 1572px, 50% 3539px;
-    background-size: 100% 833px, 100% 863px, 100% cover;
+    background-size: 100% 833px, 100% 863px, 100% 920px;
     background-color: #f2f2f2;
     padding: 0 15em;
     display: flex;
@@ -24,6 +24,7 @@ body {
 
 .header {
     display: flex;
+    /* position: fixed; */
     justify-content: space-between;
     padding-top: 27px;
     margin-bottom: 130px;
