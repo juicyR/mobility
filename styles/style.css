@@ -66,14 +66,14 @@ body {
 .slide-show-btns {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-self: center;
     position: absolute;
     top: 350px;
 }
 
 .slide-show-btns > img:nth-child(1) {
-    margin-left: 30px;
+    margin-right: 45%;
     cursor: pointer;
 }
 
@@ -83,7 +83,7 @@ body {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
-    margin-right: 30px;
+    margin-left: 45%;
     cursor: pointer;
 }
 
@@ -448,7 +448,7 @@ body {
 .con-arrows {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 140px;
     box-sizing: border-box;
     position: absolute;
@@ -467,6 +467,11 @@ body {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+    margin-right: 50%;
+}
+
+.con-arrows > img:nth-child(2) {
+    margin-left: 50%;
 }
 
 /* Section 6 */
