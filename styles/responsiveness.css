@@ -10,9 +10,21 @@
     }
 }
 
+@media (min-width: 1522px) {
+    .con-arrows {
+        top: 3943px;
+    }
+}
+
 @media (max-width: 2100px) {
     .container {
         background-size: 2100px 833px, 100% 863px, 2100px 927px;
         background-position: left top, 50% 1572px, left 3501px;
     }
+}
+
+/* Mobile */
+
+@media (max-width: 1196px) {
+    /* Mobile nav starts here */
 }
