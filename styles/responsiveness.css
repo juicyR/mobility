@@ -27,4 +27,34 @@
 
 @media (max-width: 1196px) {
     /* Mobile nav starts here */
+    .header {
+        justify-content: flex-start;
+        padding-top: 30px;
+        padding-left: 30px;
+    }
+    .links {
+        height: 100vh;
+        gap: 7em;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        margin: 0;
+        align-items: flex-start;
+        position: absolute;
+        padding: min(30vh, 13rem) 2em;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(1rem);
+    }
+    @supports (backdrop-filter: blur(1rem)) {
+        .links {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(1rem);
+        }
+    }
+    .links > a {
+        font-size: 20px;
+    }
+    .stats {
+        flex-direction: column;
+    }
 }
