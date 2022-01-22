@@ -1,1 +1,18 @@
-/* Start Here */
+@media (min-width: 1800px) {
+    .slide-show-btns > img:nth-child(1),
+    .con-arrows > img:nth-child(1) {
+        margin: 0;
+    }
+
+    .slide-show-btns > img:nth-child(2),
+    .con-arrows > img:nth-child(2) {
+        margin-left: 1550px;
+    }
+}
+
+@media (max-width: 2100px) {
+    .container {
+        background-size: 2100px 833px, 100% 863px, 2100px 927px;
+        background-position: left top, 50% 1572px, left 3501px;
+    }
+}
