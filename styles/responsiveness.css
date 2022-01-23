@@ -27,12 +27,72 @@
 
 @media (max-width: 1196px) {
     /* Mobile nav starts here */
+    .stats {
+        /* Remove after finishing nav */
+        display: none;
+    }
     .header {
         justify-content: flex-start;
-        padding-top: 30px;
+        padding-top: 5px;
         padding-left: 30px;
     }
+    .mobile-nav-toggle {
+        position: absolute;
+        background: red;
+        /* width: 1rem; */
+        aspect-ratio: 1;
+        top: 45px;
+        right: 35px;
+        z-index: 9999;
+
+        width: 50px;
+        height: 6px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .5s ease-in-out;
+    }
+
+    .mobile-nav-toggle::before,
+    .mobile-nav-toggle::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .5s ease-in-out;
+        right: .5px;
+    }
+
+    .mobile-nav-toggle::before {
+        transform: translateY(-16px);
+        top: -.5px;
+    }
+
+    .mobile-nav-toggle::after {
+        transform: translateY(16px);
+        top: .1px;
+    }
+
+    /* Animation */
+    .mobile-nav-toggle.open {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .mobile-nav-toggle.open .mobile-nav-toggle::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    .mobile-nav-toggle.open .mobile-nav-toggle::after {
+        transform: rotate(-45deg) translate(35px, -35px);
+    }
+
     .links {
+        z-index: 1000;
         height: 100vh;
         gap: 7em;
         flex-direction: column;
@@ -43,12 +103,12 @@
         position: absolute;
         padding: min(30vh, 13rem) 2em;
         background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(1rem);
+        backdrop-filter: blur(5rem);
     }
     @supports (backdrop-filter: blur(1rem)) {
         .links {
             background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(1rem);
+            backdrop-filter: blur(5rem);
         }
     }
     .links > a {

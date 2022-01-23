@@ -51,6 +51,10 @@ body {
     align-items: center;
 }
 
+.mobile-nav-toggle {
+    border: none;
+}
+
 .moto-stuff {
     margin-top: 180px;
 }

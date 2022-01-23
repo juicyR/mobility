@@ -4,6 +4,18 @@ let container = document.querySelector('.container');
 let siOne = document.querySelector('.si1'), siTwo = document.querySelector('.si2'), siThree = document.querySelector('.si3'), siFour = document.querySelector('.si4'), siFive = document.querySelector('.si5');
 let headerTop = document.querySelector('.header');
 
+const menuBtn = document.querySelector('.mobile-nav-toggle');
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+    if (!menuOpen) {
+        menuBtn.classList.add('open');
+        menuOpen = true;
+    } else {
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+    }
+});
+
 window.onscroll = function() {
     var intElemScrollTop = window.scrollY;
     if (intElemScrollTop > 10) {
