@@ -37,7 +37,7 @@ btn.addEventListener("click", () => {
 window.onscroll = function() {
     var intElemScrollTop = window.scrollY;
     if (intElemScrollTop > 10) {
-        headerTop.style.background = "#5273a1";
+        headerTop.style.background = "#005173";
     } else {
         headerTop.style.background = "transparent";
     }

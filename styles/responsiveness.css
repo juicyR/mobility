@@ -23,10 +23,27 @@
     }
 }
 
+/* Remove this part eventually */
 @media (max-width: 1201px) {
-    .stats {
-        /* remove */
+    body {
+        background: blue;
+    }
+    .section1,
+    .section2,
+    .section3,
+    .section4,
+    .section5,
+    .section6 {
         display: none;
+    }
+}
+
+@media (min-width: 1130px) {
+    .header {
+        justify-content: center;
+    }
+    .links {
+        margin-left: 340px;
     }
 }
 
@@ -38,28 +55,29 @@
     .header {
         justify-content: flex-start;
         align-items: center;
-        height: 150px;
-        padding-left: 35px;
+        height: 70px;
+        padding-left: 20px;
     }
 
     .header > a > img {
-        width: 130%;
-        height: 130%;
+        width: 170px;
+        height: 45px;
     }
 
     :root {
-        --button-width: 100px;
-        --button-height: 80px;
-        --rectangle-height: 10px;
-        --rectangle-radius: 4px;
+        --button-width: 50px;
+        --button-height: calc(var(--button-width) * .8);
+        --rectangle-height: calc(var(--button-width) * .1);
+        --rectangle-radius: calc(var(--button-width) * .04);
+        --translate: calc(var(--button-width) * .17);
         --transition: 0.65s;
     }
 
     .mobile-nav-toggle {
         position: absolute;
         display: block;
-        top: 30px;
-        right: 35px;
+        top: 15px;
+        right: 20px;
         z-index: 9999;
 
         width: var(--button-width);
@@ -89,7 +107,7 @@
     }
 
     .rectangle--top.open {
-        transform: translateX(17px) rotate(45deg);
+        transform: translateX(var(--translate)) rotate(45deg);
     }
 
     .rectangle--middle.open {
@@ -110,7 +128,7 @@
     }
 
     .rectangle--bottom.open {
-        transform: translateX(-17px) rotate(45deg);
+        transform: translateX(calc(-1 * var(--translate))) rotate(45deg);
     }
 
     .links.open{
@@ -150,12 +168,24 @@
         }
     }
     .links > a {
-        font-size: 20px;
         margin: 0 !important;
     }
     .stats {
         flex-direction: column;
     }
+}
 
+@media (max-width: 300px) {
+    .header > a > img {
+        width: 125px;
+        height: 30px;
+    }
 
+    .mobile-nav-toggle {
+        top: 20px;
+    }
+
+    :root {
+        --button-width: 35px;
+    }
 }
