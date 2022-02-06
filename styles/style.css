@@ -1,5 +1,13 @@
 body {
     overflow-x: hidden;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    height: 100%;
 }
 
 .container {
@@ -53,6 +61,7 @@ body {
 
 .mobile-nav-toggle {
     border: none;
+    display: none;
 }
 
 .moto-stuff {

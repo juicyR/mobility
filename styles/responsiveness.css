@@ -23,72 +23,99 @@
     }
 }
 
-/* Mobile */
-
-@media (max-width: 1196px) {
-    /* Mobile nav starts here */
+@media (max-width: 1201px) {
     .stats {
-        /* Remove after finishing nav */
+        /* remove */
         display: none;
     }
+}
+
+/* Mobile */
+
+@media (max-width: 1000px) {
+    /* Mobile nav starts here */
+
     .header {
         justify-content: flex-start;
-        padding-top: 5px;
-        padding-left: 30px;
+        align-items: center;
+        height: 150px;
+        padding-left: 35px;
     }
+
+    .header > a > img {
+        width: 130%;
+        height: 130%;
+    }
+
+    :root {
+        --button-width: 100px;
+        --button-height: 80px;
+        --rectangle-height: 10px;
+        --rectangle-radius: 4px;
+        --transition: 0.65s;
+    }
+
     .mobile-nav-toggle {
         position: absolute;
-        background: red;
-        /* width: 1rem; */
-        aspect-ratio: 1;
-        top: 45px;
+        display: block;
+        top: 30px;
         right: 35px;
         z-index: 9999;
 
-        width: 50px;
-        height: 6px;
-        background: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-        transition: all .5s ease-in-out;
-    }
-
-    .mobile-nav-toggle::before,
-    .mobile-nav-toggle::after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 6px;
-        background: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-        transition: all .5s ease-in-out;
-        right: .5px;
-    }
-
-    .mobile-nav-toggle::before {
-        transform: translateY(-16px);
-        top: -.5px;
-    }
-
-    .mobile-nav-toggle::after {
-        transform: translateY(16px);
-        top: .1px;
-    }
-
-    /* Animation */
-    .mobile-nav-toggle.open {
-        transform: translateX(-50px);
+        width: var(--button-width);
+        height: var(--button-height);
+        border: 0;
         background: transparent;
-        box-shadow: none;
+        outline: none;
+        cursor: pointer;
     }
 
-    .mobile-nav-toggle.open .mobile-nav-toggle::before {
-        transform: rotate(45deg) translate(35px, -35px);
+    .rectangle {
+        position: absolute;
+        height: var(--rectangle-height);
+        background: white;
+        border-radius: var(--rectangle-radius);
+        transition: transform var(--transition);
     }
 
-    .mobile-nav-toggle.open .mobile-nav-toggle::after {
-        transform: rotate(-45deg) translate(35px, -35px);
+    .rectangle--small {
+        width: calc(var(--button-width) / 2);
+    }
+
+    .rectangle--top {
+        top: 0;
+        left: 0;
+        transform-origin: top left;
+    }
+
+    .rectangle--top.open {
+        transform: translateX(17px) rotate(45deg);
+    }
+
+    .rectangle--middle.open {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .rectangle--middle {
+        top: 50%;
+        left: 0;
+        width: var(--button-width);
+        transform: translateY(-50%);
+    }
+
+    .rectangle--bottom {
+        bottom: 0;
+        right: 0;
+        transform-origin: bottom right;
+    }
+
+    .rectangle--bottom.open {
+        transform: translateX(-17px) rotate(45deg);
+    }
+
+    .links.open{
+        opacity: 1;
+        transform: scale(1);
     }
 
     .links {
@@ -96,14 +123,25 @@
         height: 100vh;
         gap: 7em;
         flex-direction: column;
+        left: 0;
+        bottom: 0;
         right: 0;
         top: 0;
         margin: 0;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        padding: min(30vh, 13rem) 2em;
         background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(5rem);
+
+        width: 100%;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: 95% 50px;
+        transition-property: opacity, transform;
+        transition-duration: var(--transition);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
     @supports (backdrop-filter: blur(1rem)) {
         .links {
@@ -113,8 +151,11 @@
     }
     .links > a {
         font-size: 20px;
+        margin: 0 !important;
     }
     .stats {
         flex-direction: column;
     }
+
+
 }
