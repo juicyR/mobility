@@ -13,7 +13,7 @@ h1, h2, h3, h4, p {
 .links {
     text-transform: uppercase;
     font-size: 12px;
-    font-family: open sans;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -29,7 +29,7 @@ h1, h2, h3, h4, p {
 
 .moto-stuff {
     text-align: center;
-    font-family: open sans;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     /*margin-top: 190px;*/
 }
@@ -52,7 +52,7 @@ h1, h2, h3, h4, p {
     justify-content: center;
     text-transform: uppercase;
     font-weight: 700;
-    font-family: open sans;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .disc-btn > a {
