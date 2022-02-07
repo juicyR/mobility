@@ -149,6 +149,8 @@ html {
     height: 270.32px;
     border-radius: 50%;
     padding: 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .stats > div:nth-child(1) {
@@ -221,7 +223,7 @@ html {
     height: 145.07px;
     border-radius: 50%;
     position: absolute;
-    top: 2110px;
+    top: 2072px;
 }
 
 /* Section 4 */
@@ -369,7 +371,7 @@ html {
     border-right: 15px solid transparent;
     border-top: 12px solid #ae4803;
     position: absolute;
-    top: 3652px;
+    top: 3642px;
     transition: opacity .35s ease-in-out;
 }
 
@@ -386,7 +388,7 @@ html {
     align-items: center;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    min-height: 545px;
+    max-height: 545px;
     max-width: 1157px;
     transition: opacity .3s ease-in;
 }
@@ -419,7 +421,7 @@ html {
     justify-content: center;
     width: 100%;
     max-width: 1157px;
-    min-height: 545px;
+    max-height: 545px;
     transition: opacity .3s ease-in;
 }
 

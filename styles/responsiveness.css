@@ -23,6 +23,27 @@
     }
 }
 
+@media (max-width: 1490px) {
+    .con-sq {
+        width: 120px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 1430px) {
+    .con-sq {
+        width: 110px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .con-sq {
+        width: 100px;
+        height: 90px;
+    }
+}
+
 /* Remove this part eventually */
 @media (max-width: 1201px) {
     body {
