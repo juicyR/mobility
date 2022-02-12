@@ -388,7 +388,7 @@ html {
     align-items: center;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    max-height: 545px;
+    min-height: 545px;
     max-width: 1157px;
     transition: opacity .3s ease-in;
 }
@@ -408,8 +408,8 @@ html {
 }
 
 .con-sq {
-    width: 140px;
-    height: 120px;
+    width: 176px;
+    height: 128px;
     border-radius: 7px;
     background: #d5d5d5;
 }
@@ -421,7 +421,7 @@ html {
     justify-content: center;
     width: 100%;
     max-width: 1157px;
-    max-height: 545px;
+    min-height: 545px;
     transition: opacity .3s ease-in;
 }
 
@@ -443,8 +443,11 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 62px 65px;
     width: 50%;
+}
+
+.con2-img > img {
+    width: 80%;
 }
 
 .con2-content > button {
