@@ -54,7 +54,7 @@
     }
     
     .con > p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .con > h3 {
@@ -69,6 +69,33 @@
 
     .con > h3 {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 1347px) {
+    .con2-content > h1 {
+        font-size: 1.4em;
+    }
+
+    .con2-content > p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1242px) {
+    /* 13px 1.3em */
+    .con2-content > h1 {
+        font-size: 1em;
+    }
+
+    .con2-content > p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1267px) {
+    .headers {
+        display: none;
     }
 }
 
