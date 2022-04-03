@@ -10,6 +10,25 @@ html {
     height: 100%;
 }
 
+.tiny-screen {
+    position: absolute;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(7, 7, 7, 0.9);
+    z-index: 100000000;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: none;
+}
+
+.tiny-screen > h1 {
+    color: #fff; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+}
+
 .container {
     background: url(../Mobility/Website/Mobility-Home-Page-V1-assets/dark-gradient-image.png), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg);
     background-repeat: no-repeat, no-repeat, no-repeat;
@@ -19,8 +38,10 @@ html {
     padding: 0 15em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     transition: 1s ease-in;
+    /* remove later */
+    height: 160%;
 }
 
 /* Section 1 */
@@ -459,7 +480,7 @@ html {
     cursor: pointer;
     font-weight: 600;
     padding: 12px 29px;
-    width: 191px;
+    width: 200px;
 }
 
 .con-arrows {
@@ -563,6 +584,10 @@ html {
     width: 224px;
     border-bottom-right-radius: 33px;
     border-top-right-radius: 33px;
+}
+
+.socials > img {
+    cursor: pointer;
 }
 
 .socials > img:nth-child(1),

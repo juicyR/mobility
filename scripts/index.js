@@ -105,6 +105,8 @@ arrowLeft.addEventListener('click', moveBackward);
 // Section 5 code
 let header1 = document.querySelector('.header1'); // These are the top headers above the information boxes
 let header2 = document.querySelector('.header2');
+let connectingLink = document.querySelector('.connecting-link');
+let connectingBLink = document.querySelector('.connecting-b-link');
 
 let triangle1 = document.querySelector('.triangle1'); // Triangles below the headers
 let triangle2 = document.querySelector('.triangle2');
@@ -157,6 +159,8 @@ function h1Appear() {
 // Arrows functionality
 header2.addEventListener("click", h2Appear);
 header1.addEventListener("click", h1Appear);
+connectingLink.addEventListener("click", h2Appear);
+connectingBLink.addEventListener("click", h1Appear);
 
 hda2.addEventListener("click", function(){
     if (connect2.style.display == "flex") {
