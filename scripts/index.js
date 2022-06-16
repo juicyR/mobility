@@ -13,25 +13,68 @@ let headerTop = document.querySelector('.header');
 // Mobile nav js
 const btn = document.querySelector(".mobile-nav-toggle"); // Mobile nav button
 const links = document.querySelector(".links"); // Navigation links
+links.classList.add("hidden");
 
 btn.addEventListener("click", () => {
+    // setTimeout(() => {
+        links.classList.toggle("hidden");
+        console.log("hidden");
+    // }, 40);
+
     // Adding 'open' class changes style of the elements
     btn.querySelectorAll("span").forEach((span) => span.classList.toggle("open"));
     links.classList.toggle("open");
 
-    if (links.classList.contains("open")) {
-        // If the menu takes up half of the screen. On body click, menu closes
-        /* container.addEventListener("click", () => {
-             links.classList.remove("open");
-             btn.querySelectorAll("span").forEach((span) => span.classList.remove("open"));
-        }) */
+    setTimeout(() => {
+        links.classList.add("visible");
+    }, 80);
 
-        // Removing body scroll functionality when menu is open
-        document.body.style.overflowY = "hidden";
-    } else {
-        document.body.style.overflowY = "scroll";
+    if (!links.classList.contains("open")) {
+        // setTimeout(() => {
+            links.classList.remove("visible");
+        // }, 20);
+        console.log("hi");
     }
 });
+
+// btn.addEventListener("click", () => {
+//     // Adding 'open' class changes style of the elements
+//     btn.querySelectorAll("span").forEach((span) => span.classList.toggle("open"));
+    
+//     // links.classList.toggle("open");
+
+//     if (links.classList.contains("open")) {
+//         // If the menu takes up half of the screen. On body click, menu closes
+//         /* container.addEventListener("click", () => {
+//              links.classList.remove("open");
+//              btn.querySelectorAll("span").forEach((span) => span.classList.remove("open"));
+//         }) */
+
+//         // Removing body scroll functionality when menu is open
+//         document.body.style.overflowY = "hidden";
+//     } else {
+//         document.body.style.overflowY = "scroll";
+//     }
+
+//     if (links.classList.contains("hidden")) {
+//         links.classList.remove('hidden');
+//         links.classList.add("open");
+//         console.log(links.classList);
+//     } else {
+//         setTimeout(() => {
+//             links.classList.remove("open");
+//             console.log(links.classList);
+//         }, 20);
+//         links.addEventListener('transitioned', function(e) {
+//             links.classList.add('hidden');
+//         }, {
+//             capture: false,
+//             once: true,
+//             passive: false
+//         });
+//     }
+
+// });
 
 // Changing the color background of the nav bar when scrolling
 window.onscroll = function() {
@@ -101,15 +144,52 @@ function moveBackward() {
 arrowRight.addEventListener('click', moveForward);
 arrowLeft.addEventListener('click', moveBackward);
 
+// Swipe functionality
+container.addEventListener('touchstart', handleTouchStart, false);
+container.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;
+var yDown = null;
+
+function getTouches(evt) {
+    return evt.touches || evt.originalEvent.touches;
+}
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if (Math.abs( xDiff ) > Math.abs( yDiff )) {
+        if (xDiff > 0) {
+            moveForward();
+        } else {
+            moveBackward();
+        }
+    }
+
+    xDown = null;
+    yDown = null;
+};
+
 
 // Section 5 code
 let header1 = document.querySelector('.header1'); // These are the top headers above the information boxes
 let header2 = document.querySelector('.header2');
 let connectingLink = document.querySelector('.connecting-link');
 let connectingBLink = document.querySelector('.connecting-b-link');
-
-let triangle1 = document.querySelector('.triangle1'); // Triangles below the headers
-let triangle2 = document.querySelector('.triangle2');
 
 let connect1 = document.querySelector('.connect1'); // Information boxes
 let connect2 = document.querySelector('.connect2');
@@ -125,10 +205,6 @@ function h2Appear() {
     // Removing 'active' class name
     header1.classList.remove("active");
 
-    // Removing and adding triangles below headers, to show user which is active
-    triangle1.style.opacity = "0";
-    triangle2.style.opacity = "1";
-
     // Displaying current information box, and undisplaying the other
     connect2.style.display = "flex";
     connect1.style.display = "none";
@@ -143,10 +219,6 @@ function h1Appear() {
     header1.classList.add("active");
     // Removing 'active' class name
     header2.classList.remove("active");
-
-    // Removing and adding triangles below headers, to show user which is active
-    triangle2.style.opacity = "0";
-    triangle1.style.opacity = "1";
 
     // Displaying current information box, and undisplaying the other
     connect1.style.display = "flex";
@@ -164,7 +236,7 @@ connectingBLink.addEventListener("click", h1Appear);
 
 hda2.addEventListener("click", function(){
     if (connect2.style.display == "flex") {
-        h1Appear();
+        h1Appear();  
     } else {
         h2Appear();
     }

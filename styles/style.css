@@ -41,7 +41,7 @@ html {
     /* justify-content: center; */
     transition: 1s ease-in;
     /* remove later */
-    height: 160%;
+    /* height: 160%; */
 }
 
 /* Section 1 */
@@ -73,11 +73,6 @@ html {
 .header > a > img {
     width: 197.6px;
     height: 51.2px;
-}
-
-.links {
-    display: flex;
-    align-items: center;
 }
 
 .mobile-nav-toggle {
@@ -374,7 +369,7 @@ html {
 
 .header1 {
     margin-right: 9px;
-}
+} 
 
 .main-content {
     margin-top: 35px;
@@ -385,20 +380,18 @@ html {
     color: white;
 }
 
-#triangle-down {
+.active:before {
+    content: "";
+    position: relative;
+    right: -44%;
+    bottom: -43px;
     width: 0;
     height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 12px solid #ae4803;
-    position: absolute;
-    top: 3642px;
-    transition: opacity .35s ease-in-out;
-}
-
-.triangle2 {
-    opacity: 0;
-}
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    transition: .3s ease-in;
+    border-top: 15px solid #ae4803;
+  }
 
 .connect1 {
     display: flex;
