@@ -11,7 +11,7 @@ html {
 }
 
 .tiny-screen {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -148,23 +148,22 @@ html {
 
 .stats {
     margin-top: 50px;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 25px;
+    padding-bottom: 120px;
     justify-content: center;
     align-items: center;
-    padding-bottom: 120px;
 }
 
 .stats > div {
     display: flex;
-    flex-basis: 270.32px;
-    flex-grow: 0;
-    flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 270.32px;
+    width: 270.32px;
     border-radius: 50%;
-    padding: 5px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -187,12 +186,6 @@ html {
 .stats > div:nth-child(4) {
     background: rgb(189,162,222);
     background: linear-gradient(234deg, rgba(189,162,222,1) 0%, rgba(116,68,176,1) 80%);
-}
-
-.stats > div:nth-child(1),
-.stats > div:nth-child(2),
-.stats > div:nth-child(3) {
-    margin-right: 25px;
 }
 
 /* Section 3 */

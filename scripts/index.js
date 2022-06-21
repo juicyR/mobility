@@ -145,8 +145,9 @@ arrowRight.addEventListener('click', moveForward);
 arrowLeft.addEventListener('click', moveBackward);
 
 // Swipe functionality
-container.addEventListener('touchstart', handleTouchStart, false);
-container.addEventListener('touchmove', handleTouchMove, false);
+const sectionUno = document.querySelector(".section1");
+sectionUno.addEventListener('touchstart', handleTouchStart, false);
+sectionUno.addEventListener('touchmove', handleTouchMove, false);
 
 var xDown = null;
 var yDown = null;
