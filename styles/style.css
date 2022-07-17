@@ -196,6 +196,7 @@ html {
     margin-bottom: 99px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    gap: 20px;
     padding-bottom: 253px;
 }
 
@@ -220,7 +221,6 @@ html {
 }
 
 .messages:nth-child(2) {
-    margin-left: 20px;
     background: #859ea8;
     background-image: url(../Mobility/Website/Mobility-Home-Page-V12-assets/Grey\ element.png);
     background-size: cover;
@@ -232,7 +232,7 @@ html {
     height: 145.07px;
     border-radius: 50%;
     position: absolute;
-    top: 2072px;
+    top: 2085px;
 }
 
 /* Section 4 */

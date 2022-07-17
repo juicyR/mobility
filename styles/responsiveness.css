@@ -109,9 +109,17 @@
     .con1-content > h1 {
         font-size: 1.3em;
     }
-
     .con > p {
         font-size: 13px;
+    }
+}
+
+@media (max-width: 1251px) {
+    .moto-stuff > h1 {
+        font-size: 56px;
+    }
+    .indexes {
+        margin-top: 195px;
     }
 }
 
@@ -123,15 +131,26 @@
     .stats {
         grid-template-rows: 1fr 1fr;
     }
+
+    .container {
+        background-position: left top, 50% 1840px, left 3501px;
+    }
+
+    .messages > img {
+        top: 2370px;
+    }
 }
 
 /* Remove this part eventually */
 @media (max-width: 1201px) {
-    .section3,
     .section4,
     .section5,
     .section6 {
         display: none;
+    }
+
+    .container {
+        background-position: left top, 50% 1880px, left 3501px;
     }
 }
 
@@ -145,6 +164,15 @@
 }
 
 /* Mobile */
+@media (max-width: 1203px) {
+    .text > p > br {
+        display: none;
+    }
+
+    .messages > img {
+        top: 2400px;
+    }
+}
 
 @media (max-width: 1128px) {
     /* .moto-stuff > h1 {
@@ -152,11 +180,20 @@
     } */
     .container {
         padding: 0 2em;
+        background-position: left top, 50% 1837px, left 3501px;
     }
     /* .slide-show-btns,
     .slide-index {
         display: none;
     } */
+
+    .text > p > br {
+        display: initial;
+    }
+
+    .messages > img {
+        top: 2370px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -299,6 +336,25 @@
     .text > p > br {
         display: none;
     }
+
+    .messages > img {
+        display: none;
+    }
+
+    .section3 {
+        flex-direction: column;
+    }
+
+    .messages {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 50px;
+        height: auto;
+    }
+
+    .container {
+        background-position: left top, 50% 1887px, left 3501px;
+    }
 }
 
 @media (max-width: 774px) {
@@ -306,7 +362,7 @@
         margin-top: 240px;
     }
     .indexes {
-        margin-top: 225px;
+        margin-top: 234px;
     }
     .moto-stuff > h1 {
         font-size: 50px;
@@ -329,6 +385,18 @@
     }
 }
 
+@media (max-width: 681px) {
+    .container {
+        background-position: left top, 50% 1960px, left 3501px;
+    }
+}
+
+@media (max-width: 624px) {
+    .moto-stuff > h1 {
+        font-size: 46px;
+    }
+}
+
 @media (max-width: 580px) {
     .moto-stuff > h1 {
         font-size: 40px;
@@ -343,11 +411,35 @@
     .stats > div > h1 {
         font-size: 5rem;
     }
+
+    .container {
+        background-position: left top, 50% 1821px, left 3501px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        background-position: 13% top, 50% 1825px, 50% 3501px;
+    }
+
+    .section3 {
+        padding-top: 218px;
+    }
 }
 
 @media (max-width: 504px) {
     .break {
         display: none;
+    }
+
+    .section3 {
+        padding-top: 161px;
+    }
+}
+
+@media (max-width: 516px) {
+    .moto-stuff > h1 {
+        font-size: 33px;
     }
 }
 
@@ -359,7 +451,7 @@
         margin-top: 135px;
     }
     .container {
-        background-position: 13% -15%, 50% 1572px, 50% 3501px;
+        background-position: 13% -15%, 50% 1390px, 50% 3501px;
     }
 
     .stats > div {
@@ -371,11 +463,42 @@
     .stats > div > h1 {
         font-size: 3.5rem;
     }
+
+    .indexes {
+        margin-top: 120px;
+    }
+
+    .section3 {
+        padding-top: 90px;
+    }
+
+    .section2 {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 435px) {
+    .section3 {
+        padding-top: 65px;
+    }
+}
+
+@media (max-width: 423px) {
+    .container {
+        background-position: 13% -15%, 50% 1470px, 50% 3501px;
+    }
+}
+
+@media (max-width: 390px) {
+    .section3 {
+        padding-top: 40px;
+    }
 }
 
 @media (max-width: 360px) {
     .container {
         padding: 0 1em;
+        background-position: 13% -15%, 50% 1390px, 50% 3501px;
     }
 
     .moto-stuff > h1 {
@@ -409,6 +532,30 @@
     .stats > div > h1 {
         font-size: 2.5rem;
     }
+
+    .messages {
+        padding: 30px;
+    }
+
+    .section3 {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 327px) {
+    .section3 {
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 290px) {
+    .container {
+        background-position: 13% -15%, 50% 1445px, 50% 3501px;
+    }
+
+    .section3 {
+        padding-top: 20px;
+    }
 }
 
 @media (max-width: 273px) {
@@ -420,6 +567,34 @@
 
     .stats > div > h1 {
         font-size: 2rem;
+    }
+
+    .messages {
+        padding: 20px;
+    }
+
+    .section3 {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width: 263px) {
+    .section2 {
+        margin-top: 100px;
+    }
+
+    .messages {
+        padding: 14px;
+    }
+
+    .indexes {
+        margin-top: 90px;
+    }
+}
+
+@media (max-width: 254px) {
+    .section3 {
+        padding-top: 25px;
     }
 }
 
