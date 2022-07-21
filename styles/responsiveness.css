@@ -80,6 +80,10 @@
     .con2-content > p {
         font-size: 13px;
     }
+
+    .container {
+        padding: 0 7em;
+    }
 }
 
 @media (max-width: 1242px) {
@@ -143,7 +147,6 @@
 
 /* Remove this part eventually */
 @media (max-width: 1201px) {
-    .section4,
     .section5,
     .section6 {
         display: none;
@@ -151,6 +154,10 @@
 
     .container {
         background-position: left top, 50% 1880px, left 3501px;
+    }
+
+    .section3 {
+        margin-bottom: 150px;
     }
 }
 
@@ -193,6 +200,10 @@
 
     .messages > img {
         top: 2370px;
+    }
+
+    .section3 { 
+        margin-bottom: 90px;
     }
 }
 
@@ -330,6 +341,14 @@
     .slide-show-btns {
         display: none;
     }
+
+    .img {
+        padding: 0 55px;
+    }
+
+    .sec4-cont {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 787px) {
@@ -354,6 +373,10 @@
 
     .container {
         background-position: left top, 50% 1887px, left 3501px;
+    }
+
+    .section3 {
+        margin-bottom: 40px;
     }
 }
 
@@ -397,6 +420,12 @@
     }
 }
 
+@media (max-width: 601px) {
+    .section3 {
+        margin-bottom: 10px;
+    }
+}
+
 @media (max-width: 580px) {
     .moto-stuff > h1 {
         font-size: 40px;
@@ -425,6 +454,20 @@
     .section3 {
         padding-top: 218px;
     }
+
+    .img {
+        padding: 0 35px;
+    }
+
+    .section3 {
+        margin-bottom: -10px;
+    }
+}
+
+@media (max-width: 516px) {
+    .moto-stuff > h1 {
+        font-size: 33px;
+    }
 }
 
 @media (max-width: 504px) {
@@ -435,11 +478,20 @@
     .section3 {
         padding-top: 161px;
     }
+
+    .img {
+        padding: 0 25px;
+    }
+
+    .img > img {
+        width: 78px !important;
+        height: 77px !important;
+    }
 }
 
-@media (max-width: 516px) {
-    .moto-stuff > h1 {
-        font-size: 33px;
+@media (max-width: 499px) {
+    .section3 {
+        margin-bottom: -50px;
     }
 }
 
@@ -451,7 +503,7 @@
         margin-top: 135px;
     }
     .container {
-        background-position: 13% -15%, 50% 1390px, 50% 3501px;
+        background-position: 13% -8%, 50% 1390px, 50% 3501px;
     }
 
     .stats > div {
@@ -485,7 +537,39 @@
 
 @media (max-width: 423px) {
     .container {
-        background-position: 13% -15%, 50% 1470px, 50% 3501px;
+        background-position: 13% -8%, 50% 1470px, 50% 3501px;
+    }
+
+    .img {
+        padding: 0 10px;
+    }
+
+    .content > h1 {
+        font-size: 15px;
+    }
+
+    .content > p {
+        font-size: 13px;
+    }
+
+    .content > button {
+        padding: 17px 13px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 435px) {
+    .section3 {
+        margin-bottom: -50px;
+    }
+}
+
+@media (max-width: 405px) {
+    .section3 {
+        margin-bottom: -80px;
     }
 }
 
@@ -495,10 +579,22 @@
     }
 }
 
+@media (max-width: 386px) {
+    .section3 {
+        margin-bottom: -120px;
+    }
+}
+
+@media (max-width: 363px) {
+    .section3 {
+        margin-bottom: -140px;
+    }
+}
+
 @media (max-width: 360px) {
     .container {
         padding: 0 1em;
-        background-position: 13% -15%, 50% 1390px, 50% 3501px;
+        background-position: 13% -8%, 50% 1390px, 50% 3501px;
     }
 
     .moto-stuff > h1 {
@@ -539,22 +635,95 @@
 
     .section3 {
         padding-top: 100px;
+        margin-bottom: -20px;
+    }
+}
+
+@media (max-width: 349px) {
+    .section3 {
+        margin-bottom: -50px;
+    }
+}
+
+@media (max-width: 334px) {
+    .section3 {
+        margin-bottom: -80px;
+    }
+}
+
+@media (max-width: 333px) {
+    .section3 {
+        margin-bottom: -100px;
     }
 }
 
 @media (max-width: 327px) {
     .section3 {
         padding-top: 40px;
+        margin-bottom: -70px;
+    }
+}
+
+@media (max-width: 318px) {
+    .section3 {
+        margin-bottom: -90px;
+    }
+}
+
+@media (max-width: 310px) {
+    .img {
+        padding: 0 7px;
+    }
+
+    .img > img {
+        width: 58px !important;
+        height: 57px !important;
+    }
+}
+
+@media (max-width: 296px) {
+    .section3 {
+        margin-bottom: -110px;
+    }
+}
+
+@media (max-width: 291px) {
+    .section3 {
+        margin-bottom: -130px;
     }
 }
 
 @media (max-width: 290px) {
     .container {
-        background-position: 13% -15%, 50% 1445px, 50% 3501px;
+        background-position: 13% -8%, 50% 1445px, 50% 3501px;
     }
 
     .section3 {
         padding-top: 20px;
+        margin-bottom: -60px;
+    }
+
+    .content > button {
+        padding: 0 5px;
+        width: auto;
+    }
+}
+
+@media (max-width: 286px) {
+    .section3 {
+        margin-bottom: -80px;
+    }
+}
+
+@media (max-width: 284px) {
+    .section3 {
+        margin-bottom: -100px;
+    }
+}
+
+@media (max-width: 283px) {
+    .section3 {
+        margin-bottom: -130px;
     }
 }
 
@@ -575,6 +744,23 @@
 
     .section3 {
         padding-top: 80px;
+        margin-bottom: -40px;
+    }
+
+    .section4 > h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 271px) {
+    .section3 {
+        margin-bottom: -90px;
+    }
+}
+
+@media (max-width: 264px) {
+    .section3 {
+        margin-bottom: -110px;
     }
 }
 
@@ -590,11 +776,54 @@
     .indexes {
         margin-top: 90px;
     }
+
+    .content > button {
+        font-size: 13px;
+    }
+
+    .section3 {
+        margin-bottom: -60px;
+    }
+}
+
+@media (max-width: 259px) {
+    .section3 {
+        margin-bottom: -85px;
+    }
+}
+
+@media (max-width: 257px) {
+    .section3 {
+        margin-bottom: -100px;
+    }
 }
 
 @media (max-width: 254px) {
     .section3 {
+        margin-bottom: -80px;
         padding-top: 25px;
+    }
+
+    .section4 > h1 {
+        font-size: 1.7em;
+    }
+}
+
+@media (max-width: 252px) {
+    .section3 {
+        margin-bottom: -100px;
+    }
+}
+
+@media (max-width: 251px) {
+    .section3 {
+        margin-bottom: -125px;
+    }
+}
+
+@media (max-width: 240px) {
+    .section3 {
+        margin-bottom: -150px;
     }
 }
 
