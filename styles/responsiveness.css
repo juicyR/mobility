@@ -37,6 +37,12 @@
     }
 }
 
+@media (max-width: 1521px) {
+    .con-arrows {
+        top: 3940px;
+    }
+}
+
 @media (max-width: 1490px) {
     .con-sq {
         width: 120px;
@@ -70,6 +76,10 @@
     .con > h3 {
         font-size: 16px;
     }
+
+    .active:before {
+        display: none;
+    }
 }
 
 @media (max-width: 1347px) {
@@ -83,6 +93,14 @@
 
     .container {
         padding: 0 7em;
+    }
+
+    .con-arrows {
+        display: none;
+    }
+
+    .con-sq {
+        width: 12.5vw;
     }
 }
 
@@ -98,15 +116,9 @@
 }
 
 @media (max-width: 1267px) {
-    .headers {
+    /* .headers {
         display: none;
-    }
-}
-
-@media (max-width: 1266px) {
-    .con-sq {
-        width: 100px;
-    }
+    } */
 }
 
 @media (max-width: 1269px) {
@@ -127,7 +139,7 @@
     }
 }
 
-@media (max-width: 1219px) {
+@media (max-width: 1219px) { /*Where the image in section 5 breaks*/
     .con1-content > h1 {
         font-size: 1.2em;
     }
@@ -137,17 +149,20 @@
     }
 
     .container {
-        background-position: left top, 50% 1840px, left 3501px;
+        background-position: left top, 50% 1840px, left bottom;
     }
 
     .messages > img {
         top: 2370px;
     }
+
+    .section5 {
+        background-color: blue; /*At this point*/
+    }
 }
 
 /* Remove this part eventually */
 @media (max-width: 1201px) {
-    .section5,
     .section6 {
         display: none;
     }
@@ -181,7 +196,7 @@
     }
 }
 
-@media (max-width: 1128px) {
+@media (max-width: 1128px) {  /*At this line*/
     /* .moto-stuff > h1 {
         font-size: 60px;
     } */
@@ -351,6 +366,12 @@
     }
 }
 
+@media (max-width: 851px) { /* This is when the section 5 headers break */
+    .headers {
+        font-size: 8px;
+    }
+}
+
 @media (max-width: 787px) {
     .text > p > br {
         display: none;
@@ -380,7 +401,7 @@
     }
 }
 
-@media (max-width: 774px) {
+@media (max-width: 774px) { /*Here is where it breaks*/
     .moto-stuff {
         margin-top: 240px;
     }
@@ -406,17 +427,81 @@
     .arrow {
         padding: 9px;
     }
+
+    .con1-content,
+    .con2-content {
+        width: auto;
+    }
+
+    .connect1,
+    .con2-content {
+        padding: 62px 55px;
+    }
+
+    .con1-img,
+    .con2-img {
+        display: none;
+    }
+
+    .con1-content > h1 {
+        font-size: 5vw;
+    }
+
+    .con2-content > h1 {
+        font-size: 5vw;
+    }
+
+    .con1-content > p,
+    .con2-content > p {
+        font-size: 2.5vw;
+        line-height: normal;
+    }
+
+    .con1-content > h3 {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 733px) {
+    .headers {
+        font-size: 7px;
+    }
 }
 
 @media (max-width: 681px) {
     .container {
         background-position: left top, 50% 1960px, left 3501px;
     }
+
+    .headers {
+        font-size: 1vw;
+    }
+
+    .headers > div {
+        padding: 20px 45px;
+    }
 }
 
 @media (max-width: 624px) {
     .moto-stuff > h1 {
         font-size: 46px;
+    }
+
+    .headers {
+        font-size: 1.2vw;
+    }
+
+    .headers > div {
+        padding: 20px 0px;
+        align-items: center;
+    }
+
+    .header1 {
+        width: 75%;
+    }
+
+    .header2 {
+        width: 100%;
     }
 }
 
@@ -492,6 +577,33 @@
 @media (max-width: 499px) {
     .section3 {
         margin-bottom: -50px;
+    }
+
+    .headers {
+        display: none;
+    }
+
+    .con-arrows {
+        display: flex;
+        top: 4709px;
+        gap: 65%;
+    }
+
+    .con-arrows > img {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        padding: 15px 22px;
+        background: #dd7600;
+        margin: 0;
+    }
+
+    .con-arrows > img:nth-child(1) {
+        box-shadow:  -4px -4px 30px -5px black;
+    }
+
+    .con-arrows > img:nth-child(2) {
+        box-shadow:  -4px 4px 30px -5px black;
     }
 }
 
