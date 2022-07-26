@@ -428,6 +428,7 @@ html {
     color: #333333;
     justify-content: center;
     width: 100%;
+    box-sizing: border-box;
     max-width: 1157px;
     min-height: 545px;
     transition: opacity .3s ease-in;
