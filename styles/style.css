@@ -34,7 +34,8 @@ html {
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: top, 50% 1572px, 50% 3501px;
     background-size: 100% 833px, 100% 863px, 100% 927px;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
+    background-color: red;
     padding: 0 15em;
     display: flex;
     flex-direction: column;
@@ -367,6 +368,10 @@ html {
 
 .main-content {
     margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .active {
@@ -478,7 +483,6 @@ html {
     padding: 0 140px;
     box-sizing: border-box;
     position: absolute;
-    top: 4000px;
     left: 0;
     right: 0;
 }
@@ -520,6 +524,8 @@ html {
 .contacts {
     margin-bottom: 166px;
     display: flex;
+    padding: 0 2em;
+    box-sizing: border-box;
     flex-direction: column;
     width: 100%;
 }
