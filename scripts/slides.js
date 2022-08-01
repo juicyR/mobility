@@ -1,6 +1,7 @@
 // Declaration of variables
 const arrows = document.querySelectorAll(".slide-arrow");
 const indexes = document.querySelectorAll(".indexes");
+const slideContainer = document.querySelector(".slide-container");
 
 // Section 1
 const sectionUno = document.querySelector(".section1");
@@ -18,7 +19,22 @@ window.onload = () => {
     }
 };
 
+arrows.forEach(button => {
+    button.addEventListener("click", () => {
+        const offset = button.dataset.arrowImage == "next" ? 1 : -1;
+        const activeSlide = slideContainer.querySelector("[data-active]");
 
+        let newIndex = [...slides].indexOf(activeSlide) + offset;
+        if (newIndex < 0) {newIndex = slides.length - 1;} else {
+            if (newIndex >= slides.length) {newIndex = 0;}
+        }
+        console.log("newIndex is " + newIndex);
+        console.log("activeSlide is " + activeSlide);
+
+        slides[newIndex].dataset.active = true;
+        delete activeSlide.dataset.active;
+    })
+})
 
 
 
