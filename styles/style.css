@@ -30,19 +30,31 @@ html {
 }
 
 .container {
-    background: url(../Mobility/Website/Mobility-Home-Page-V1-assets/dark-gradient-image.png), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg);
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: top, 50% 1572px, 50% 3501px;
-    background-size: 100% 833px, 100% 863px, 100% 927px;
-    /* background-color: #f2f2f2; */
     background-color: red;
     padding: 0 15em;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     transition: 1s ease-in;
-    /* remove later */
-    /* height: 160%; */
+}
+
+.slides {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.splash-img[data-active] {
+    opacity: 1;
+}
+
+.slides > img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    height: 833px;
 }
 
 /* Section 1 */
@@ -50,6 +62,10 @@ html {
 .section1 {
     display: flex;
     flex-direction: column;
+    padding-bottom: 35px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
 }
 
 .header {
@@ -99,7 +115,6 @@ html {
     justify-content: center;
     align-self: center;
     position: absolute;
-    top: 350px;
 }
 
 .slide-show-btns > img:nth-child(1) {
@@ -143,8 +158,10 @@ html {
 /* Section 2 */
 
 .section2 {
-    margin-top: 140px;
+    padding-top: 95px;
+    padding-bottom: 110px;
     text-align: center;
+    background-color: blue;
 }
 
 .stats {
@@ -192,13 +209,13 @@ html {
 /* Section 3 */
 .section3 {
     display: flex;
-    padding-top: 230px;
+    padding-top: 192px;
+    padding-bottom: 253px;
     justify-content: center;
-    margin-bottom: 99px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     gap: 20px;
-    padding-bottom: 253px;
+    background-color: teal;
 }
 
 .messages {
@@ -239,10 +256,12 @@ html {
 /* Section 4 */
 
 .section4 {
-    margin-bottom: 79px;
+    padding-top: 99px;
+    padding-bottom: 79px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: pink;
 }
 
 .sec4-cont {
@@ -344,6 +363,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: orange;
 }
 
 .headers {
