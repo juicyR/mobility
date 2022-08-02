@@ -64,12 +64,8 @@ function handleTouchMove(evt) {
     }
 
     var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
 
     var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-
-    console.log(xDiff + '+' + yDiff);
 
     let swipeOffset = xDiff > 0 ? 1 : -1;
 

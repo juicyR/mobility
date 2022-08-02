@@ -10,3 +10,11 @@ window.onscroll = function() {
         headerTop.style.background = "transparent";
     }
 };
+
+let sectionTois = document.querySelector('.section3');
+let threeImage = document.querySelector('.sec3-img');
+
+const compStylesTois = window.getComputedStyle(sectionTois);
+const toisHeight = compStylesTois.getPropertyValue('height');
+
+threeImage.style.height = `${toisHeight}`;
