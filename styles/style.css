@@ -30,34 +30,10 @@ html {
 }
 
 .container {
-    background-color: red;
     padding: 0 15em;
     display: flex;
     flex-direction: column;
     transition: 1s ease-in;
-}
-
-.slides {
-    position: absolute;
-    width: 100vw;
-    left: 0;
-    right: 0;
-    top: 0;
-}
-
-.splash-img[data-active] {
-    opacity: 1;
-    transition-delay: 0ms;
-}
-
-.slides > img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    height: 833px;
-    transition: 300ms all ease-in-out;
-    transition-delay: 300ms;
 }
 
 /* Section 1 */
@@ -110,6 +86,33 @@ html {
 
 .disc-btn {
     margin-top: 88px;
+}
+
+.slide-container {
+    z-index: -1;
+}
+
+.slides {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.splash-img[data-active] {
+    opacity: 1;
+    transition-delay: 0ms;
+}
+
+.slides > img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    height: 833px;
+    transition: 300ms all ease-in-out;
+    transition-delay: 300ms;
 }
 
 .slide-show-btns {
