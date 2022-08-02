@@ -41,17 +41,6 @@ arrows.forEach(button => {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
 // Swipe functionality
 sectionUno.addEventListener('touchstart', handleTouchStart, false);
 sectionUno.addEventListener('touchmove', handleTouchMove, false);
