@@ -19,18 +19,24 @@ window.onload = () => {
     }
 };
 
+// Moving back and forth
+
+function moving(offset) {
+    const activeSlide = slideContainer.querySelector("[data-active]");
+
+    let newIndex = [...slides].indexOf(activeSlide) + offset;
+    if (newIndex < 0) {newIndex = slides.length - 1;} else {
+        if (newIndex >= slides.length) {newIndex = 0;}
+    }
+
+    slides[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+}
+
 arrows.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.arrowImage == "next" ? 1 : -1;
-        const activeSlide = slideContainer.querySelector("[data-active]");
-
-        let newIndex = [...slides].indexOf(activeSlide) + offset;
-        if (newIndex < 0) {newIndex = slides.length - 1;} else {
-            if (newIndex >= slides.length) {newIndex = 0;}
-        }
-
-        slides[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
+        moving(offset);
     })
 })
 
@@ -41,13 +47,56 @@ arrows.forEach(button => {
 
 
 
+
+
+
+
+
+// Swipe functionality
+sectionUno.addEventListener('touchstart', handleTouchStart, false);
+sectionUno.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;
+var yDown = null;
+
+function getTouches(evt) {
+    return evt.touches || evt.originalEvent.touches;
+}
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    console.log(xDiff + '+' + yDiff);
+
+    let swipeOffset = xDiff > 0 ? 1 : -1;
+
+    moving(swipeOffset);
+
+    xDown = null;
+    yDown = null;
+};
+
+
+
+
+
+
 // Slideshow indexes
 let siOne = document.querySelector('.si1'), siTwo = document.querySelector('.si2'), siThree = document.querySelector('.si3'), siFour = document.querySelector('.si4'), siFive = document.querySelector('.si5');
-
-// Whole page slideshow with background images of the body element. Every slideshow in the webpage uses this code
-let current = 0;
-let images = [];
-images[0] = '../Mobility/Website/Mobility-Home-Page-V1-assets/dark-gradient-image.png';images[1] = '../Mobility/Website/Mobility-Home-Page-V1-assets/550.jpg';images[2] = '../Mobility/Website/Mobility-Home-Page-V1-assets/551.jpg';images[3] = '../Mobility/Website/Mobility-Home-Page-V1-assets/552.jpg';images[4] = '../Mobility/Website/Mobility-Home-Page-V1-assets/553.jpg';
 
 // Changing the color of the index according to the image changes
 function indexShow() {
@@ -77,71 +126,6 @@ function indexShow() {
         siFive.style.background = "white";
     }
 }
-
-// Move forward functionality
-function moveForward() {
-    current++;
-    if (current > images.length-1) {
-        current = 0;
-    }
-    container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg)`;
-    indexShow();
-}
-
-// Move backward functionality
-function moveBackward() {
-    current--;
-    if (current < 0) {
-        current = 4;
-    }
-    container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg) `;
-    indexShow();
-}
-
-// Buttons functionality
-arrowRight.addEventListener('click', moveForward);
-arrowLeft.addEventListener('click', moveBackward);
-
-// Swipe functionality
-
-sectionUno.addEventListener('touchstart', handleTouchStart, false);
-sectionUno.addEventListener('touchmove', handleTouchMove, false);
-
-var xDown = null;
-var yDown = null;
-
-function getTouches(evt) {
-    return evt.touches || evt.originalEvent.touches;
-}
-
-function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-}
-
-function handleTouchMove(evt) {
-    if (!xDown || !yDown) {
-        return;
-    }
-
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-
-    if (Math.abs( xDiff ) > Math.abs( yDiff )) {
-        if (xDiff > 0) {
-            moveForward();
-        } else {
-            moveBackward();
-        }
-    }
-
-    xDown = null;
-    yDown = null;
-};
 
 
 
