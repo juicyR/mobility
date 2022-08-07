@@ -215,8 +215,9 @@ html {
 /* Section 3 */
 .section3 {
     display: flex;
-    padding-top: 192px;
-    padding-bottom: 253px;
+    /* flex-direction: column; */
+    padding-top: 224px;
+    padding-bottom: 224px;
     justify-content: center;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -231,9 +232,11 @@ html {
     left: 0;
     right: 0;
     align-self: center;
+    line-height: 0;
 }
 
 .sec3-img {
+    width: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -251,14 +254,14 @@ html {
     padding: 70px 50px 124px 50px;
 }
 
-.messages:nth-child(1) {
+.first-message {
     background: #e55f04;
     background-image: url(../Mobility/Website/Mobility-Home-Page-V12-assets/orange\ element.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.messages:nth-child(2) {
+.second-message {
     background: #859ea8;
     background-image: url(../Mobility/Website/Mobility-Home-Page-V12-assets/Grey\ element.png);
     background-size: cover;
