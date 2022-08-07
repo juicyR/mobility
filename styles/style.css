@@ -215,7 +215,6 @@ html {
 /* Section 3 */
 .section3 {
     display: flex;
-    /* flex-direction: column; */
     padding-top: 224px;
     padding-bottom: 224px;
     justify-content: center;
@@ -246,7 +245,6 @@ html {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     flex-direction: column;
-    /* justify-content: center; */
     width: 569px;
     height: 380px;
     justify-content: center;
