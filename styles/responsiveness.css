@@ -35,7 +35,6 @@
         width: 110px;
     }
 
-    /* Decrease the size of the text in this area */
     .con1-content > h1 {
         font-size: 1.5em;
     }
@@ -86,7 +85,6 @@
 }
 
 @media (max-width: 1242px) {
-    /* 13px 1.3em */
     .con2-content > h1 {
         font-size: 3.3vw;
     }
@@ -94,12 +92,6 @@
     .con2-content > p {
         font-size: 10px;
     }
-}
-
-@media (max-width: 1267px) {
-    /* .headers {
-        display: none;
-    } */
 }
 
 @media (max-width: 1269px) {
@@ -120,7 +112,7 @@
     }
 }
 
-@media (max-width: 1219px) { /*Where the image in section 5 breaks*/
+@media (max-width: 1219px) {
     .con1-content > h1 {
         font-size: 1.2em;
     }
@@ -297,7 +289,7 @@
     }
 }
 
-@media (max-width: 851px) { /* This is when the section 5 headers break */
+@media (max-width: 851px) {
     .headers {
         font-size: 8px;
     }
@@ -773,7 +765,6 @@
     }
 } 
 
-/* Con arrows breaks here */
 @media (max-width: 273px) {
     .messages {
         padding: 20px;
