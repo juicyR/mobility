@@ -25,12 +25,26 @@ function moving(offset) {
     const activeSlide = slideContainer.querySelector("[data-active]");
 
     let newIndex = [...slides].indexOf(activeSlide) + offset;
-    if (newIndex < 0) {newIndex = slides.length - 1;} else {
-        if (newIndex >= slides.length) {newIndex = 0;}
+    if (newIndex < 0) {
+        newIndex = slides.length - 1;
+        indexes[0].style.background = "white";
+    } else {
+        if (newIndex >= slides.length) {
+            newIndex = 0;
+            indexes[indexes.length - 1].style.background = "white";
+        }
     }
 
     slides[newIndex].dataset.active = true;
     delete activeSlide.dataset.active;
+
+    // Slideshow Index
+    indexes[newIndex].style.background = "#ce3229";
+    if (offset == 1) {
+        indexes[newIndex - 1].style.background = "white";
+    } else {
+        indexes[newIndex + 1].style.background = "white";
+    }
 }
 
 arrows.forEach(button => {
@@ -74,61 +88,6 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
-
-
-
-
-
-
-// Slideshow indexes
-let siOne = document.querySelector('.si1'), siTwo = document.querySelector('.si2'), siThree = document.querySelector('.si3'), siFour = document.querySelector('.si4'), siFive = document.querySelector('.si5');
-
-// Changing the color of the index according to the image changes
-function indexShow() {
-    if (current == 0) {
-        siOne.style.background = "#ce3229";
-    } else {
-        siOne.style.background = "white";
-    }
-    if (current == 1) {
-        siTwo.style.background = "#ce3229";
-    } else {
-        siTwo.style.background = "white";
-    }
-    if (current == 2) {
-        siThree.style.background = "#ce3229";
-    } else {
-        siThree.style.background = "white";
-    }
-    if (current == 3) {
-        siFour.style.background = "#ce3229";
-    } else {
-        siFour.style.background = "white";
-    }
-    if (current == 4) {
-        siFive.style.background = "#ce3229";
-    } else {
-        siFive.style.background = "white";
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Section 5 code
 let header1 = document.querySelector('.header1'); // These are the top headers above the information boxes
