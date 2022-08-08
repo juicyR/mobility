@@ -128,10 +128,6 @@
     .stats {
         grid-template-rows: 1fr 1fr;
     }
-
-    .messages > img {
-        top: 2370px;
-    }
 }
 
 @media (min-width: 1160px) {
@@ -148,10 +144,6 @@
     .text > p > br {
         display: none;
     }
-
-    .messages > img {
-        top: 2400px;
-    }
 }
 
 @media (max-width: 1128px) {
@@ -161,10 +153,6 @@
 
     .text > p > br {
         display: initial;
-    }
-
-    .messages > img {
-        top: 2370px;
     }
 }
 
