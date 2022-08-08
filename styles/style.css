@@ -402,7 +402,7 @@ html {
     display: flex;
     justify-content: center;
     cursor: pointer;
-    transition: .3s ease-in;
+    position: relative;
 }
 
 .header1 {
@@ -424,15 +424,14 @@ html {
 
 .active:before {
     content: "";
-    position: relative;
-    right: -44%;
-    bottom: -43px;
+    position: absolute;
+    bottom: 0;
     width: 0;
     height: 0;
+    transform: translateY(99%);
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    transition: .3s ease-in;
-    border-top: 15px solid #ae4803;
+    border-top: 10px solid #ae4803;
   }
 
 .connect1 {
@@ -486,7 +485,6 @@ html {
     padding: 62px 51px 62px 65px;
     display: flex;
     flex-direction: column;
-    align-items: left;
     justify-content: center;
     width: 50%;
 }
