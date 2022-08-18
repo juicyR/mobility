@@ -381,12 +381,33 @@ html {
 /* Section 5 */
 
 .section5 {
-    padding: 88px 0 100px 0;
+    padding: 100px 0 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: orange;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.sec5-slideshow {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.sec5-img {
+    position: absolute;
+    object-fit: cover;
+    object-position: left;
+    width: 100%;
+    z-index: -1;
+    display: none;
+}
+
+.sec5-img[data-active-background] {
+    display: block;
 }
 
 .headers {
@@ -417,12 +438,12 @@ html {
     justify-content: center;
 }
 
-.active {
+.sec5-header[data-active-header] {
     background: #ae4803 !important;
     color: white;
 }
 
-.active:before {
+.sec5-header[data-active-header]:before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -432,10 +453,17 @@ html {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 10px solid #ae4803;
-  }
+}
+
+.connect {
+    display: none;
+}
+
+.connect[data-active-content] {
+    display: flex;
+}
 
 .connect1 {
-    display: flex;
     background: white;
     padding: 62px 51px;
     color: #333333;
@@ -470,7 +498,6 @@ html {
 }
 
 .connect2 {
-    display: none;
     background: white;
     color: #333333;
     justify-content: center;
@@ -518,14 +545,12 @@ html {
 }
 
 .con-arrows {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     padding: 0 140px;
     box-sizing: border-box;
     position: absolute;
-    left: 0;
-    right: 0;
 }
 
 .con-arrows > img {

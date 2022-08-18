@@ -18,3 +18,14 @@ const compStylesTois = window.getComputedStyle(sectionTois);
 const toisHeight = compStylesTois.getPropertyValue('height');
 
 threeImage.style.height = `${toisHeight}`;
+
+// Section 5 Height
+const sectionFive = document.querySelector(".section5");
+const secFiveBg = document.querySelectorAll(".sec5-img");
+
+let secFiveComp = window.getComputedStyle(sectionFive);
+let secFiveHeight = secFiveComp.getPropertyValue('height');
+
+for (let i = 0; i < secFiveBg.length; i++) {
+    secFiveBg[i].style.height = `${secFiveHeight}`;
+}

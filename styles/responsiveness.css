@@ -269,6 +269,10 @@
     .links > a {
         margin: 0 !important;
     }
+
+    .headers {
+        font-size: 1vw;
+    }
 }
 
 @media (max-width: 892px) {
@@ -282,12 +286,6 @@
 
     .sec4-cont {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 851px) {
-    .headers {
-        font-size: 8px;
     }
 }
 
@@ -373,21 +371,15 @@
     .con1-content > h3 {
         font-size: 3vw;
     }
-}
 
-@media (max-width: 733px) {
     .headers {
-        font-size: 7px;
+        font-size: .9vw;
     }
 }
 
 @media (max-width: 681px) {
-    .headers {
-        font-size: 1vw;
-    }
-
     .headers > div {
-        padding: 20px 45px;
+        padding: 20px 36px;
     }
 
     .connect1,
@@ -399,10 +391,6 @@
 @media (max-width: 624px) {
     .moto-stuff > h1 {
         font-size: 46px;
-    }
-
-    .headers {
-        font-size: 1.2vw;
     }
 
     .headers > div {
@@ -449,6 +437,10 @@
 }
 
 @media (max-width: 580px) {
+    .headers {
+        font-size: 1vw;
+    }
+
     .moto-stuff > h1 {
         font-size: 40px;
     }

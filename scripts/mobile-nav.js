@@ -4,10 +4,7 @@ const links = document.querySelector(".links"); // Navigation links
 links.classList.add("hidden");
 
 btn.addEventListener("click", () => {
-    // setTimeout(() => {
-        links.classList.toggle("hidden");
-        console.log("hidden");
-    // }, 40);
+    links.classList.toggle("hidden");
 
     // Adding 'open' class changes style of the elements
     btn.querySelectorAll("span").forEach((span) => span.classList.toggle("open"));
@@ -18,9 +15,6 @@ btn.addEventListener("click", () => {
     }, 80);
 
     if (!links.classList.contains("open")) {
-        // setTimeout(() => {
             links.classList.remove("visible");
-        // }, 20);
-        console.log("hi");
     }
 });

@@ -89,67 +89,137 @@ function handleTouchMove(evt) {
     yDown = null;
 };
 
+// Section 5 switching
+const secFiveHeader = document.querySelectorAll(".sec5-header");
+const headers = document.querySelector(".headers");
+const secFiveArr = document.querySelectorAll(".sec5-arr");
+const content = document.querySelectorAll(".connect");
+const mainContent = document.querySelector(".main-content");
+const bgContainer = document.querySelector(".sec5-slideshow");
+const backgroundImage = document.querySelectorAll(".sec5-img");
+
+secFiveArr.forEach(button => {
+    button.addEventListener("click", () => {
+        const offset = button.dataset.newContent == "next" ? 1 : -1;
+        secFiveSlide(offset);
+    })
+})
+
+secFiveHeader.forEach(button => {
+    button.addEventListener("click", () => {
+        if (button.dataset.switch == "right") {
+            content[1].dataset.activeContent = true;
+            delete content[0].dataset.activeContent;
+        
+            secFiveHeader[1].dataset.activeHeader= true;
+            delete secFiveHeader[0].dataset.activeHeader;
+
+            backgroundImage[1].dataset.activeBackground= true;
+            delete backgroundImage[0].dataset.activeBackground;
+        } else {
+            content[0].dataset.activeContent = true;
+            delete content[1].dataset.activeContent;
+        
+            secFiveHeader[0].dataset.activeHeader= true;
+            delete secFiveHeader[1].dataset.activeHeader;
+
+            backgroundImage[0].dataset.activeBackground= true;
+            delete backgroundImage[1].dataset.activeBackground;
+        }
+    })
+})
+
+function secFiveSlide(offset) {
+    let current = mainContent.querySelector("[data-active-content]");
+    let currentHeader = headers.querySelector("[data-active-header]");
+    let currentBg = bgContainer.querySelector("[data-active-background]");
+    secFiveIndex = [...content].indexOf(current) + offset;
+
+    if (secFiveIndex < 0) {
+        secFiveIndex = content.length - 1;
+    } else if (secFiveIndex >= content.length) {
+        secFiveIndex = 0;
+    }
+
+    content[secFiveIndex].dataset.activeContent = true;
+    delete current.dataset.activeContent;
+
+    secFiveHeader[secFiveIndex].dataset.activeHeader= true;
+    delete currentHeader.dataset.activeHeader;
+
+    backgroundImage[secFiveIndex].dataset.activeBackground= true;
+    delete currentBg.dataset.activeBackground;
+}
+
+
+
+
+
+
+
+
+
 // Section 5 code
-let header1 = document.querySelector('.header1'); // These are the top headers above the information boxes
-let header2 = document.querySelector('.header2');
-let connectingLink = document.querySelector('.connecting-link');
-let connectingBLink = document.querySelector('.connecting-b-link');
+// let header1 = document.querySelector('.header1'); // These are the top headers above the information boxes
+// let header2 = document.querySelector('.header2');
+// let connectingLink = document.querySelector('.connecting-link');
+// let connectingBLink = document.querySelector('.connecting-b-link');
 
-let connect1 = document.querySelector('.connect1'); // Information boxes
-let connect2 = document.querySelector('.connect2');
-let active = document.querySelector('.active'); // Active slide css change
+// let connect1 = document.querySelector('.connect1'); // Information boxes
+// let connect2 = document.querySelector('.connect2');
+// let active = document.querySelector('.active'); // Active slide css change
 
-let hda1 = document.querySelector('.hda1'); // Slideshow arrows
-let hda2 = document.querySelector('.hda2');
+// let hda1 = document.querySelector('.hda1'); // Slideshow arrows
+// let hda2 = document.querySelector('.hda2');
 
-// Second information box appear and disappear
-function h2Appear() {
-    // Adding 'active' class name so header style changes
-    header2.classList.add("active");
-    // Removing 'active' class name
-    header1.classList.remove("active");
+// // Second information box appear and disappear
+// function h2Appear() {
+//     // Adding 'active' class name so header style changes
+//     header2.classList.add("active");
+//     // Removing 'active' class name
+//     header1.classList.remove("active");
 
-    // Displaying current information box, and undisplaying the other
-    connect2.style.display = "flex";
-    connect1.style.display = "none";
+//     // Displaying current information box, and undisplaying the other
+//     connect2.style.display = "flex";
+//     connect1.style.display = "none";
 
-    // Changing background according to information box
-    container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V1-assets/budgetnet.jpg) `;
-}
+//     // Changing background according to information box
+//     container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V1-assets/budgetnet.jpg) `;
+// }
 
-// First information box appear and disappear
-function h1Appear() {
-    // Adding 'active' class name so header style changes
-    header1.classList.add("active");
-    // Removing 'active' class name
-    header2.classList.remove("active");
+// // First information box appear and disappear
+// function h1Appear() {
+//     // Adding 'active' class name so header style changes
+//     header1.classList.add("active");
+//     // Removing 'active' class name
+//     header2.classList.remove("active");
 
-    // Displaying current information box, and undisplaying the other
-    connect1.style.display = "flex";
-    connect2.style.display = "none";
+//     // Displaying current information box, and undisplaying the other
+//     connect1.style.display = "flex";
+//     connect2.style.display = "none";
 
-    // Changing background according to information box
-    container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg) `;
-}
+//     // Changing background according to information box
+//     container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg) `;
+// }
 
-// Arrows functionality
-header2.addEventListener("click", h2Appear);
-header1.addEventListener("click", h1Appear);
-connectingLink.addEventListener("click", h2Appear);
-connectingBLink.addEventListener("click", h1Appear);
+// // Arrows functionality
+// header2.addEventListener("click", h2Appear);
+// header1.addEventListener("click", h1Appear);
+// connectingLink.addEventListener("click", h2Appear);
+// connectingBLink.addEventListener("click", h1Appear);
 
-hda2.addEventListener("click", function(){
-    if (connect2.style.display == "flex") {
-        h1Appear();  
-    } else {
-        h2Appear();
-    }
-});
+// hda2.addEventListener("click", function(){
+//     if (connect2.style.display == "flex") {
+//         h1Appear();  
+//     } else {
+//         h2Appear();
+//     }
+// });
 
-hda1.addEventListener("click", function(){
-    if (connect1.style.display == "flex") {
-        h2Appear();
-    } else {
-        h1Appear();
-    }
-});
+// hda1.addEventListener("click", function(){
+//     if (connect1.style.display == "flex") {
+//         h2Appear();
+//     } else {
+//         h1Appear();
+//     }
+// });
