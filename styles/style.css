@@ -167,7 +167,6 @@ html {
     padding-top: 95px;
     padding-bottom: 110px;
     text-align: center;
-    background-color: blue;
 }
 
 .stats {
@@ -284,7 +283,6 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: pink;
 }
 
 .sec4-cont {
@@ -386,7 +384,6 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: orange;
     box-sizing: border-box;
     position: relative;
 }
