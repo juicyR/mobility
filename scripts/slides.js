@@ -151,75 +151,36 @@ function secFiveSlide(offset) {
     delete currentBg.dataset.activeBackground;
 }
 
+// Swipe functionality Sec 5
+sectionFive.addEventListener('touchstart', handleTouchStartSecFive, false);
+sectionFive.addEventListener('touchmove', handleTouchMoveSecFive, false);
 
+var xDownSecFive = null;
+var yDownSecFive = null;
 
+function getTouchesSecFive(evt) {
+    return evt.touches || evt.originalEvent.touches;
+}
 
+function handleTouchStartSecFive(evt) {
+    const firstTouch = getTouchesSecFive(evt)[0];
+    xDownSecFive = firstTouch.clientX;
+    yDownSecFive = firstTouch.clientY;
+}
 
+function handleTouchMoveSecFive(evt) {
+    if (!xDownSecFive || !yDownSecFive) {
+        return;
+    }
 
+    var xUpSecFive = evt.touches[0].clientX;
 
+    var xDiffSecFive = xDownSecFive - xUpSecFive;
 
+    let swipeOffsetSecFive = xDiffSecFive > 0 ? 1 : -1;
 
-// Section 5 code
-// let header1 = document.querySelector('.header1'); // These are the top headers above the information boxes
-// let header2 = document.querySelector('.header2');
-// let connectingLink = document.querySelector('.connecting-link');
-// let connectingBLink = document.querySelector('.connecting-b-link');
+    secFiveSlide(swipeOffsetSecFive);
 
-// let connect1 = document.querySelector('.connect1'); // Information boxes
-// let connect2 = document.querySelector('.connect2');
-// let active = document.querySelector('.active'); // Active slide css change
-
-// let hda1 = document.querySelector('.hda1'); // Slideshow arrows
-// let hda2 = document.querySelector('.hda2');
-
-// // Second information box appear and disappear
-// function h2Appear() {
-//     // Adding 'active' class name so header style changes
-//     header2.classList.add("active");
-//     // Removing 'active' class name
-//     header1.classList.remove("active");
-
-//     // Displaying current information box, and undisplaying the other
-//     connect2.style.display = "flex";
-//     connect1.style.display = "none";
-
-//     // Changing background according to information box
-//     container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V1-assets/budgetnet.jpg) `;
-// }
-
-// // First information box appear and disappear
-// function h1Appear() {
-//     // Adding 'active' class name so header style changes
-//     header1.classList.add("active");
-//     // Removing 'active' class name
-//     header2.classList.remove("active");
-
-//     // Displaying current information box, and undisplaying the other
-//     connect1.style.display = "flex";
-//     connect2.style.display = "none";
-
-//     // Changing background according to information box
-//     container.style.backgroundImage = `url('${images[current]}'), url(../Mobility/Website/Mobility-Home-Page-V12-assets/Hills.jpg), url(../Mobility/Website/Mobility-Home-Page-V12-assets/business-bg.jpg) `;
-// }
-
-// // Arrows functionality
-// header2.addEventListener("click", h2Appear);
-// header1.addEventListener("click", h1Appear);
-// connectingLink.addEventListener("click", h2Appear);
-// connectingBLink.addEventListener("click", h1Appear);
-
-// hda2.addEventListener("click", function(){
-//     if (connect2.style.display == "flex") {
-//         h1Appear();  
-//     } else {
-//         h2Appear();
-//     }
-// });
-
-// hda1.addEventListener("click", function(){
-//     if (connect1.style.display == "flex") {
-//         h2Appear();
-//     } else {
-//         h1Appear();
-//     }
-// });
+    xDownSecFive = null;
+    yDownSecFive = null;
+};
