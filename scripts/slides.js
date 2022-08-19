@@ -13,11 +13,9 @@ let slides = document.querySelectorAll('.splash-img');
 const compStyles = window.getComputedStyle(sectionUno);
 const unoHeight = compStyles.getPropertyValue('height');
 
-window.onload = () => {
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.height = `${unoHeight}`;        
-    }
-};
+for (let i = 0; i < slides.length; i++) {
+    slides[i].style.height = `${unoHeight}`;        
+}
 
 // Moving back and forth
 
@@ -60,7 +58,6 @@ sectionUno.addEventListener('touchstart', handleTouchStart, false);
 sectionUno.addEventListener('touchmove', handleTouchMove, false);
 
 var xDown = null;
-var yDown = null;
 
 function getTouches(evt) {
     return evt.touches || evt.originalEvent.touches;
@@ -69,11 +66,10 @@ function getTouches(evt) {
 function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];
     xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
 }
 
 function handleTouchMove(evt) {
-    if (!xDown || !yDown) {
+    if (!xDown) {
         return;
     }
 
@@ -86,7 +82,6 @@ function handleTouchMove(evt) {
     moving(swipeOffset);
 
     xDown = null;
-    yDown = null;
 };
 
 // Section 5 switching
@@ -150,37 +145,3 @@ function secFiveSlide(offset) {
     backgroundImage[secFiveIndex].dataset.activeBackground= true;
     delete currentBg.dataset.activeBackground;
 }
-
-// Swipe functionality Sec 5
-sectionFive.addEventListener('touchstart', handleTouchStartSecFive, false);
-sectionFive.addEventListener('touchmove', handleTouchMoveSecFive, false);
-
-var xDownSecFive = null;
-var yDownSecFive = null;
-
-function getTouchesSecFive(evt) {
-    return evt.touches || evt.originalEvent.touches;
-}
-
-function handleTouchStartSecFive(evt) {
-    const firstTouch = getTouchesSecFive(evt)[0];
-    xDownSecFive = firstTouch.clientX;
-    yDownSecFive = firstTouch.clientY;
-}
-
-function handleTouchMoveSecFive(evt) {
-    if (!xDownSecFive || !yDownSecFive) {
-        return;
-    }
-
-    var xUpSecFive = evt.touches[0].clientX;
-
-    var xDiffSecFive = xDownSecFive - xUpSecFive;
-
-    let swipeOffsetSecFive = xDiffSecFive > 0 ? 1 : -1;
-
-    secFiveSlide(swipeOffsetSecFive);
-
-    xDownSecFive = null;
-    yDownSecFive = null;
-};

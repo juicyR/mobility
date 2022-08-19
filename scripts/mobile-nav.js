@@ -21,7 +21,8 @@ btn.addEventListener("click", () => {
         if (!links.classList.contains("open")) {
             links.classList.remove("visible");
             x.style.overflowY = "scroll";
-        } else {
+            links.classList.add("hidden");
+    } else {
             x.style.overflowY = "hidden";
         }
     }
