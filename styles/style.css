@@ -157,7 +157,7 @@ html {
     margin-right: 6px;
 }
 
-.si1 {
+.indexes[data-active-index] {
     background: #ce3229;
 }
 

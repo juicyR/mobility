@@ -37,7 +37,13 @@ btn.addEventListener("click", () => {
         disableScroll();
     }
 
-    firstLink.addEventListener("click", closeNav);
-    secondLink.addEventListener("click", closeNav);
+    firstLink.addEventListener("click", () => {
+        closeNav();
+        moveLeft();
+    });
+    secondLink.addEventListener("click", () => {
+        closeNav();
+        moveRight();
+    });
     thirdLink.addEventListener("click", closeNav);
 });

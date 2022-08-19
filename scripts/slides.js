@@ -1,6 +1,7 @@
 // Declaration of variables
 const arrows = document.querySelectorAll(".slide-arrow");
 const indexes = document.querySelectorAll(".indexes");
+const indexContainer = document.querySelector(".slide-index");
 const slideContainer = document.querySelector(".slide-container");
 
 // Section 1
@@ -21,15 +22,14 @@ for (let i = 0; i < slides.length; i++) {
 
 function moving(offset) {
     const activeSlide = slideContainer.querySelector("[data-active]");
+    const activeIndex = indexContainer.querySelector("[data-active-index]");
 
     let newIndex = [...slides].indexOf(activeSlide) + offset;
     if (newIndex < 0) {
         newIndex = slides.length - 1;
-        indexes[0].style.background = "white";
     } else {
         if (newIndex >= slides.length) {
             newIndex = 0;
-            indexes[indexes.length - 1].style.background = "white";
         }
     }
 
@@ -37,12 +37,8 @@ function moving(offset) {
     delete activeSlide.dataset.active;
 
     // Slideshow Index
-    indexes[newIndex].style.background = "#ce3229";
-    if (offset == 1) {
-        indexes[newIndex - 1].style.background = "white";
-    } else {
-        indexes[newIndex + 1].style.background = "white";
-    }
+    indexes[newIndex].dataset.activeIndex = true;
+    delete activeIndex.dataset.activeIndex;
 }
 
 arrows.forEach(button => {
@@ -100,26 +96,34 @@ secFiveArr.forEach(button => {
     })
 })
 
+function moveRight() {
+    content[1].dataset.activeContent = true;
+    delete content[0].dataset.activeContent;
+
+    secFiveHeader[1].dataset.activeHeader= true;
+    delete secFiveHeader[0].dataset.activeHeader;
+
+    backgroundImage[1].dataset.activeBackground= true;
+    delete backgroundImage[0].dataset.activeBackground;
+}
+
+function moveLeft() {
+    content[0].dataset.activeContent = true;
+    delete content[1].dataset.activeContent;
+
+    secFiveHeader[0].dataset.activeHeader= true;
+    delete secFiveHeader[1].dataset.activeHeader;
+
+    backgroundImage[0].dataset.activeBackground= true;
+    delete backgroundImage[1].dataset.activeBackground;
+}
+
 secFiveHeader.forEach(button => {
     button.addEventListener("click", () => {
         if (button.dataset.switch == "right") {
-            content[1].dataset.activeContent = true;
-            delete content[0].dataset.activeContent;
-        
-            secFiveHeader[1].dataset.activeHeader= true;
-            delete secFiveHeader[0].dataset.activeHeader;
-
-            backgroundImage[1].dataset.activeBackground= true;
-            delete backgroundImage[0].dataset.activeBackground;
+            moveRight();
         } else {
-            content[0].dataset.activeContent = true;
-            delete content[1].dataset.activeContent;
-        
-            secFiveHeader[0].dataset.activeHeader= true;
-            delete secFiveHeader[1].dataset.activeHeader;
-
-            backgroundImage[0].dataset.activeBackground= true;
-            delete backgroundImage[1].dataset.activeBackground;
+            moveLeft();
         }
     })
 })
